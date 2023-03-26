@@ -5,22 +5,24 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
         home: Scaffold(
-      backgroundColor: Color(0xff181818),
+      backgroundColor: const Color(0xff181818),
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 40),
+        padding: const EdgeInsets.symmetric(horizontal: 40),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          SizedBox(
+          const SizedBox(
             height: 80,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               Column(crossAxisAlignment: CrossAxisAlignment.end, children: [
-                Text(
+                const Text(
                   'Hey, Phil',
                   style: TextStyle(
                     color: Colors.white,
@@ -36,7 +38,7 @@ class MyApp extends StatelessWidget {
               ]),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 120,
           ),
           Text(
@@ -44,10 +46,10 @@ class MyApp extends StatelessWidget {
             style:
                 TextStyle(fontSize: 22, color: Colors.white.withOpacity(0.8)),
           ),
-          SizedBox(
+          const SizedBox(
             height: 5,
           ),
-          Text(
+          const Text(
             '\$ 5 194 482',
             style: TextStyle(
               fontSize: 48,
@@ -55,7 +57,7 @@ class MyApp extends StatelessWidget {
               color: Colors.white,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 30,
           ),
           Row(
@@ -65,7 +67,7 @@ class MyApp extends StatelessWidget {
                   color: Colors.amber,
                   borderRadius: BorderRadius.circular(45),
                 ),
-                child: Padding(
+                child: const Padding(
                   padding: EdgeInsets.symmetric(
                     vertical: 20,
                     horizontal: 50,
