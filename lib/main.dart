@@ -109,6 +109,7 @@ class MyApp extends StatelessWidget {
           ),
           // CARD
           Container(
+            clipBehavior: Clip.hardEdge, // 내부요소가 넘치는 경우 자르기
             decoration: BoxDecoration(
               color: const Color(0xFF1F2123),
               borderRadius: BorderRadius.circular(25),
@@ -116,8 +117,11 @@ class MyApp extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(30),
               child: Row(
+                // Text & Icon
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Column(
+                    // 상하 (통화 / 박스 / 금액)
                     crossAxisAlignment:
                         CrossAxisAlignment.start, // Column - cross : 가로축
                     children: [
@@ -133,6 +137,7 @@ class MyApp extends StatelessWidget {
                         height: 10,
                       ),
                       Row(
+                        // Text들을 한 줄로 표현하기 위해 Row 사용
                         children: [
                           const Text(
                             '6 428',
@@ -155,6 +160,19 @@ class MyApp extends StatelessWidget {
                       ),
                     ],
                   ),
+                  Transform.scale(
+                    // 아이콘이 커져도 카드가 커지지 않도록 Translate 사용
+                    scale: 2.2, // 크기
+                    child: Transform.translate(
+                      // 위치
+                      offset: const Offset(-3, 15),
+                      child: const Icon(
+                        Icons.euro_rounded,
+                        color: Colors.white,
+                        size: 88,
+                      ),
+                    ),
+                  )
                 ],
               ),
             ),
